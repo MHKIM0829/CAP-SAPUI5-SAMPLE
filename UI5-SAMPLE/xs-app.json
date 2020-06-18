@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/UI5-SAMPLE/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/UI5-SAMPLE/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}

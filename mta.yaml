@@ -1,0 +1,31 @@
+ID: CAP-MTA-EXER
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: UI5-SAMPLE
+   type: html5
+   path: UI5-SAMPLE
+   parameters:
+      disk-quota: 512M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: uaa_CAP-MTA-EXER
+    - name: dest_CAP-MTA-EXER
+
+resources:
+ - name: uaa_CAP-MTA-EXER
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+   type: org.cloudfoundry.managed-service
+
+ - name: dest_CAP-MTA-EXER
+   parameters:
+      service-plan: lite
+      service: destination
+   type: org.cloudfoundry.managed-service
+
